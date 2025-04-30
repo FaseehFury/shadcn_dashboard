@@ -28,7 +28,7 @@ CollapseButton
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>
   </DropdownMenuTrigger>
-  <DropdownMenuContent>
+  <DropdownMenuContent sideOffset={10}>
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
     <DropdownMenuSeparator />
     <DropdownMenuItem>
