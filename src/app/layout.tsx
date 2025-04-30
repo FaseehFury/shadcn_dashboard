@@ -32,10 +32,11 @@ export default function RootLayout({
         <div className="flex gap-2">
 
         <AppSideBar />
-        <main className="w-screen border-green-600 border-4">
+        <main className="w-screen border-4 border-blue-600 ">
 
         <AppNavBar />
-        <div className="p-4 h-screen border-orange-700 border-4">
+        <div className="p-4 h-screen border-4
+ border-orange-700 ">
 
         {children}
         </div>
