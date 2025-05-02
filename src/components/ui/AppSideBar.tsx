@@ -42,7 +42,7 @@ const AppSideBar = () => {
       <SidebarMenuItem>
         <SidebarMenuButton asChild>
           <Link href="/">
-            <Image src="https://raw.githubusercontent.com/safak/shadcn/b7c883dd08ad6c001aa8f3e0c04ce090b3cf04ba/public/logo.svg" alt="Logo" width={20} height={20} />
+            <Image src="/logo.svg" alt="Logo" width={20} height={20} />
           <span className="text-bold">Faseeh Dev</span>
           </Link>
         </SidebarMenuButton>
