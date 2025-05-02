@@ -4,6 +4,7 @@ import "./globals.css";
 import AppSideBar from "@/components/ui/AppSideBar";
 import AppNavBar from "@/components/ui/AppNavBar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,20 +36,22 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
         > 
+        <SidebarProvider>
 
-        <div className="flex gap-2">
+
+       
 
         <AppSideBar />
-        <main className="w-screen border-4 border-blue-600 ">
+        <main className="w-full">
 
         <AppNavBar />
-        <div className="p-4 h-screen border-4
- border-orange-700 ">
+        <div className=" ">
 
         {children}
         </div>
         </main>
-        </div>
+        
+   </SidebarProvider>
    </ThemeProvider>
       </body>
     </html>

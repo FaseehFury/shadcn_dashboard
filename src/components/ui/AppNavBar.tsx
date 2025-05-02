@@ -16,13 +16,18 @@ import { useTheme } from "next-themes";
 
 
 
+
+
+
+
 const AppNavBar = () => {
-  const { setTheme } = useTheme()
+  const {theme,setTheme } = useTheme()
     return (
         <nav className="flex items-center justify-between">
 CollapseButton
 <div className="flex items-center gap-4">
     <Link href="/" className="">Dashboard</Link>
+    {/* THEMEMENU */}
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
@@ -31,7 +36,7 @@ CollapseButton
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" sideOffset={10}>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>
@@ -44,7 +49,7 @@ CollapseButton
       </DropdownMenuContent>
     </DropdownMenu>
 
-
+{/* USERMENU */}
     
 <DropdownMenu>
   <DropdownMenuTrigger>
