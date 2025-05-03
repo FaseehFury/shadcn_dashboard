@@ -1,8 +1,12 @@
-import {Home,Inbox,Calendar,Search,Settings, User2, ChevronUp} from "lucide-react"
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./sidebar";
+"use client"
+import {Home,Inbox,Calendar,Search,Settings, User2, ChevronUp, LogOut} from "lucide-react"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator } from "./sidebar";
 import Link from "next/link";
 import Image from "next/image";
 import { DropdownMenu, DropdownMenuTrigger } from "./dropdown-menu";
+import { DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
+import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 
 const items = [
@@ -34,10 +38,12 @@ const items = [
   ];
 
 const AppSideBar = () => {
+  const {theme} = useTheme();
+  console.log(theme);
     return (
-        <div className="">
-<Sidebar>
-  <SidebarHeader>
+     
+<Sidebar collapsible="icon">
+  <SidebarHeader className="py-4">
     <SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton asChild>
@@ -50,6 +56,7 @@ const AppSideBar = () => {
      
     </SidebarMenu>
   </SidebarHeader>
+  <SidebarSeparator className="!w-auto"/>
   <SidebarContent>
   <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -58,10 +65,10 @@ const AppSideBar = () => {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -78,13 +85,17 @@ const AppSideBar = () => {
                   <User2 /> John Doe <ChevronUp className="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
-
+       <DropdownMenuContent align="end">
+        <DropdownMenuItem>Account</DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuItem>Sign Out</DropdownMenuItem>
+       </DropdownMenuContent>
     </DropdownMenu>
     </SidebarMenuItem>
 </SidebarMenu>
   </SidebarFooter>
 </Sidebar>
-        </div>
+       
 
     );
 };

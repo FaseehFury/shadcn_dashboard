@@ -13,6 +13,7 @@ import {
   import { SquareMenu } from 'lucide-react';
 import { Button } from "./button";
 import { useTheme } from "next-themes";
+import { SidebarTrigger, useSidebar } from "./sidebar";
 
 
 
@@ -21,10 +22,19 @@ import { useTheme } from "next-themes";
 
 
 const AppNavBar = () => {
+  
   const {theme,setTheme } = useTheme()
+  const {toggleSidebar} = useSidebar();
     return (
-        <nav className="flex items-center justify-between">
-CollapseButton
+        <nav className="p-4 flex items-center justify-between">
+{/* CollapseButton */}
+{/* <SidebarTrigger /> */}
+
+<Button variant="outline" onClick={toggleSidebar}>
+  Toggler
+</Button>
+
+
 <div className="flex items-center gap-4">
     <Link href="/" className="">Dashboard</Link>
     {/* THEMEMENU */}
