@@ -50,7 +50,7 @@ export  default async function RootLayout({
         <main className="w-full">
 
         <AppNavBar />
-        <div className=" ">
+        <div className="">
 
         {children}
         </div>
