@@ -30,10 +30,10 @@ const chartConfig = {
   
 
 
-const AppBarChart = () => {
+const AppAreaChart = () => {
     return (
       <div className="">
-        <h1 className="mb-6 text-lg font-medium">ChartBar</h1>
+        <h1 className="mb-6 text-lg">ChartBar</h1>
 
 <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
   <BarChart accessibilityLayer data={chartData}>
@@ -63,4 +63,4 @@ const AppBarChart = () => {
     );
 };
 
-export default AppBarChart;
+export default AppAreaChart;
