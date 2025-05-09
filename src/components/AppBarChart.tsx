@@ -24,7 +24,7 @@ const chartConfig = {
   },
   mobile: {
     label: "Mobile",
-    color: "#60a5fa",
+    color: "var(--color-chart-2)",
   },
 } satisfies ChartConfig
   
